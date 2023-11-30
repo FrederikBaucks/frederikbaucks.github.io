@@ -1,0 +1,168 @@
+:root {
+    --primary-bg-color: #0a1b2a; /* Light grey background */
+    --primary-text-color: #ecf0f1; /* Navy blue text */
+    --accent-color: #afbfdb; /* Accent color */
+    --header-footer-bg-color: #ecf0f1; /* Dark background for header/footer */
+    --padding_right: 20vh;
+    --padding_left: 20vh;
+}
+
+
+h1 a {
+    text-decoration: none; /* Removes the underline */
+    color: var(--primary-bg-color); /* Navy blue for text */
+}
+
+.header-img {
+    width: 300px;
+    height: 400px;
+    border-radius: 5%;  
+    padding-right: 0vh;
+    padding-top: 0vh;
+    padding-bottom: 0vh;
+    padding-left: 0vh;
+}
+
+section {
+    margin: 20px;
+}
+
+.profile-card {
+    text-align: left;
+    margin: auto;
+    width: 100%; /* This will make the profile card span the full width */
+    /* Add any additional styling such as padding, background-color, etc. */
+}
+body {
+    /* display: flex;
+    font-family: Arial, sans-serif;
+    flex-direction: column;    */
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "main sidebar"
+        "footer footer";
+}
+
+
+
+.header {
+    background-color: var(--header-footer-bg-color); /* Navy blue, similar to the coat */
+    color: var(--primary-bg-color); /* Light grey for text */
+    padding: 20px;
+    padding-left: var(--padding_left);
+    padding-right: var(--padding_right);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    grid-area: header;
+}
+
+.header h1 {
+    font-size: 1.5em;     /* Adjust as necessary */
+    white-space: nowrap;  /* Prevent wrapping */
+    overflow: hidden;     /* Hide overflow */
+    text-overflow: ellipsis;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%
+}
+
+.navigation li {
+    margin-left: 20%; /* Space between menu items */
+}
+
+.navigation a {
+    color: var(--primary-bg-color); /* Light grey for text */
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+.navigation a.active,
+.navigation a:hover {
+    color: var(--accent-color); /* This could be an accent color, perhaps inspired by the autumn leaves */
+    border-bottom: 2px solid var(--accent-color); /* Underline effect for the active/hover state */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+
+.content {
+    order: 2; 
+    flex: 4;
+    padding: 20px;
+    flex-grow: 1;
+    width: 100%;
+}
+
+
+footer {
+    grid-area: footer;
+    background-color: var(--header-footer-bg-color); /* Navy blue, similar to the coat */
+    color: var(--primary-bg-color); /* Light grey for text */
+    padding: 20px;
+    text-align: center;
+}
+
+.main-content {
+    grid-area: main;
+    background-color: var(--primary-bg-color); /* Light grey background for the main content */
+    color: var(--primary-text-color); /* Navy blue for text */
+    padding-right: 5vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    padding-left: var(--padding_left);
+    font-size: 1.2em;
+
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: var(--primary-bg-color); /* Light grey background for the sidebar */
+    text-align: center; /* Center-align the image */
+    padding: 20px;
+}
+
+.sidebar img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 2%; /* Circular image */
+}
+
+
+@media (max-width: 768px) {
+    /* For smaller screens, stack the layout */
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+    }
+}
