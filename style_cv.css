@@ -48,6 +48,8 @@ body {
         "education education"
         "experience experience"
         "footer footer";
+    max-width: 100%;
+    width: 100%;
 }
 
 
@@ -57,12 +59,12 @@ body {
     color: var(--primary-bg-color); /* Light grey for text */
     padding: 20px;
     padding-left: var(--padding_left);
-    padding-right: var(--padding_right);
+    /* padding-right: var(--padding_right); */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    /* width: 58.5%; */
     grid-area: header;
 }
 
@@ -135,63 +137,101 @@ footer {
     grid-area: main;
     background-color: var(--primary-bg-color); /* Light grey background for the main content */
     color: var(--primary-text-color); /* Navy blue for text */
-    padding: 5vh 10vh; /* Vertical and horizontal padding */
+    
     padding-left: var(--padding_left);
     font-size: 1.2em;
-    text-align: justify; 
+    text-align: justify; /* Justify aligns text for a clean look */
+    line-height: 1.2; /* Increase line height */
+    hyphens: auto; /* Enable automatic hyphenation */
+    word-wrap: break-word;
+
 }
 
 .sidebar {
     grid-area: sidebar;
     background-color: var(--primary-bg-color); /* Light grey background for the sidebar */
     text-align: center; /* Center-align the image */
-    padding: 20px;
+    padding: 10px;
 }
 
 .sidebar img {
     max-width: 80%;
     height: auto;
-    border-radius: 2%; /* Circular image */
+    border-radius: 3%; /* Circular image */
 }
+
 
 .education {
     grid-area: education;
     font-family: 'Times New Roman', serif; /* A classic choice for academic papers */
-    font-size: 1em; /* Adjust size as needed */
     background-color: var(--primary-text-color); /* Light grey background for the main content */
     color: var(--primary-bg-color); /* Navy blue for text */
-    /* padding: 20px; */
-    /* padding-bottom: 5vh; */
-    padding-left: 50vh;
-    padding-right: 50vh;
+    padding-left: 42%;
+    padding-right: 2%;
     line-height: 1.1; /* Adjust line spacing for better readability */
-    font-size: 1em;
+    font-size: 1.1em;
     align-items: center;
+}
+
+.university {
+    grid-area: university;
+    font-family: 'Times New Roman', serif; /* A classic choice for academic papers */
+    background-color: var(--primary-text-color); /* Light grey background for the main content */
+    color: var(--primary-bg-color); /* Navy blue for text */
+    padding-left: 42%;
+    padding-right: 2%;
+    line-height: 1.1; /* Adjust line spacing for better readability */
+    font-size: 1.1em;
+    align-items: center;
+
 }
 
 .experience {
     grid-area: experience;
     font-family: 'Times New Roman', serif; /* A classic choice for academic papers */
-    font-size: 1em; /* Adjust size as needed */
+    font-size: 1.1em; /* Adjust size as needed */
     background-color: var(--primary-text-color); /* Light grey background for the main content */
     color: var(--primary-bg-color); /* Navy blue for text */
     padding: 20px;
     padding-bottom: 5vh;
-    padding-left: 50vh;
-    padding-right: 50vh;
+    padding-left: 42%;
+    padding-right: 2%;
     line-height: 1.1; /* Adjust line spacing for better readability */
-    font-size: 1em;
     align-items: center;
 }
 
+.company {
+    grid-area: company;
+    font-family: 'Times New Roman', serif; /* A classic choice for academic papers */
+    font-size: 1.1em; /* Adjust size as needed */
+    background-color: var(--primary-text-color); /* Light grey background for the main content */
+    color: var(--primary-bg-color); /* Navy blue for text */
+    padding: 20px;
+    padding-bottom: 5vh;
+    padding-left: 42%;
+    padding-right: 2%;
+    padding-top: 18%;
+    line-height: 1.1; /* Adjust line spacing for better readability */
+    align-items: center;
+
+}
+
+
+
 @media (max-width: 768px) {
     /* For smaller screens, stack the layout */
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
     body {
         grid-template-columns: 1fr;
         grid-template-areas:
             "header"
             "main"
             "sidebar"
+            "education"
+            "experience"
             "footer";
     }
 }

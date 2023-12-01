@@ -46,6 +46,8 @@ body {
         "header header"
         "main sidebar"
         "footer footer";
+    max-width: 100%;
+    width: 100%;
 }
 
 
@@ -60,7 +62,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    /* width: 100%; */
     grid-area: header;
 }
 
@@ -133,30 +135,36 @@ footer {
     grid-area: main;
     background-color: var(--primary-bg-color); /* Light grey background for the main content */
     color: var(--primary-text-color); /* Navy blue for text */
-    padding-right: 5vh;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
+    
     padding-left: var(--padding_left);
     font-size: 1.2em;
-
+    text-align: left; /* Justify aligns text for a clean look */
+    line-height: 1.2; /* Increase line height */
+    hyphens: auto; /* Enable automatic hyphenation */
+    word-wrap: break-word;
 }
 
 .sidebar {
     grid-area: sidebar;
     background-color: var(--primary-bg-color); /* Light grey background for the sidebar */
     text-align: center; /* Center-align the image */
-    padding: 20px;
+    padding: 10px;
 }
 
 .sidebar img {
     max-width: 80%;
     height: auto;
-    border-radius: 2%; /* Circular image */
+    border-radius: 3%; /* Circular image */
 }
+
 
 
 @media (max-width: 768px) {
     /* For smaller screens, stack the layout */
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
     body {
         grid-template-columns: 1fr;
         grid-template-areas:
