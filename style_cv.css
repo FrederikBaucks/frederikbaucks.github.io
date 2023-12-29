@@ -45,7 +45,7 @@ body {
     grid-template-areas:
         "header header"
         "main sidebar"
-        "education education"
+        "pdf_cv pdf_cv"
         "experience experience"
         "footer footer";
     max-width: 100%;
@@ -173,6 +173,18 @@ footer {
     align-items: center;
 }
 
+.pdf_cv {
+    grid-area: pdf_cv;
+    font-family: 'Times New Roman', serif; /* A classic choice for academic papers */
+    background-color: var(--primary-text-color); /* Light grey background for the main content */
+    color: var(--primary-bg-color); /* Navy blue for text */
+    padding-left: 20%;
+    padding-right: 2%;
+    line-height: 1.1; /* Adjust line spacing for better readability */
+    font-size: 1.1em;
+    align-items: center;
+}
+
 .university {
     grid-area: university;
     font-family: 'Times New Roman', serif; /* A classic choice for academic papers */
@@ -230,7 +242,7 @@ footer {
             "header"
             "main"
             "sidebar"
-            "education"
+            "pdf_cv"
             "experience"
             "footer";
     }
